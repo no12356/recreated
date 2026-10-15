@@ -1,0 +1,110 @@
+
+local Creator = loadstring(game:HttpGet("https://pastebin.com/raw/0fSnvfGt"))()
+
+-- Create entity
+local entity = Creator.createEntity({
+    CustomName = "Nightmare Rush",
+    Model = "rbxassetid://11179883020",
+
+    Speed = 200,
+    DelayTime = 3,
+    HeightOffset = 1,
+
+    CanKill = true,
+    KillRange = 100,
+
+    BreakLights = false,
+    BackwardsMovement = false,
+
+    FlickerLights = {
+        true,
+        2,
+    },
+
+    Cycles = {
+        Min = 1,
+        Max = 1,
+        WaitTime = 1,
+    },
+
+    CamShake = {
+        true,
+        {1.5, 20, 0.1, 1},
+        100,
+    },
+
+    Jumpscare = {
+        true,
+        {
+            Image1 = "rbxassetid://10888024922",
+            Image2 = "rbxassetid://10888024922",
+
+            Shake = true,
+
+            Sound1 = {
+                10483790459,
+                { Volume = 0.5 },
+            },
+
+            Sound2 = {
+                10483837590,
+                { Volume = 0.5 },
+            },
+
+            Flashing = {
+                true,
+                Color3.fromRGB(255, 0, 0),
+            },
+
+            Tease = {
+                false,
+                Min = 1,
+                Max = 3,
+            },
+        },
+    },
+
+    CustomDialog = {
+        "Lets see to who you died to",
+        "You died to Nightmare Rush",
+        "Nightmare Rush isnt like any rush, its a silent rush!",
+        "Also it rebounds, for only one time.",
+        "I'll see you later now",
+        "Good luck on your next run!",
+    },
+})
+
+-----[[ Advanced ]]-----
+
+entity.Debug.OnEntitySpawned = function(entityTable)
+    print("[Nightmare Rush] Spawned:", entityTable.Model)
+end
+
+entity.Debug.OnEntityDespawned = function(entityTable)
+    print("[Nightmare Rush] Despawned:", entityTable.Model)
+end
+
+entity.Debug.OnEntityStartMoving = function(entityTable)
+    print("[Nightmare Rush] Started moving")
+end
+
+entity.Debug.OnEntityFinishedRebound = function(entityTable)
+    print("[Nightmare Rush] Finished rebound")
+end
+
+entity.Debug.OnEntityEnteredRoom = function(entityTable, room)
+    print("[Nightmare Rush] Entered room:", room)
+end
+
+entity.Debug.OnLookAtEntity = function(entityTable)
+    print("[Nightmare Rush] Player looked at entity")
+end
+
+entity.Debug.OnDeath = function(entityTable)
+    warn("[Nightmare Rush] Player died")
+end
+
+------------------------
+
+-- Run entity
+Creator.runEntity(entity)
