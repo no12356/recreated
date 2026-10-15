@@ -41,7 +41,7 @@ local entity = Creator.createEntity({
             Image2 = "rbxassetid://10888024922",
 
             Tease = {
-                false,
+                true,
                 Min = 1,
                 Max = 3
             },
@@ -66,9 +66,13 @@ local entity = Creator.createEntity({
     },
 
     CustomDialog = {
-        "You died to Nightmare Rush.",
-        "Listen carefully and find a hiding spot."
-    }
+        "Lets see to who you died to",
+            "You died to Nightmare Rush",
+            "Nightmare Rush isnt like any rush, its a silent rush!",
+            "Also it rebounds, for only one time.",
+            "So focus on the lights CAREFULLY",
+            "Good luck on your next run!"     
+  }
 })
 
 
