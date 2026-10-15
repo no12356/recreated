@@ -1,0 +1,109 @@
+
+local Creator = loadstring(game:HttpGet("https://pastebin.com/raw/0fSnvfGt"))()
+
+-- Create entity
+local entity = Creator.createEntity({
+    CustomName = "Nightmare Ambush",
+    Model = "rbxassetid://12378474555",
+
+    Speed = 400,
+    DelayTime = 0,
+    HeightOffset = 1,
+
+    CanKill = true,
+    KillRange = 100,
+
+    BreakLights = true,
+    BackwardsMovement = false,
+
+    FlickerLights = {
+        true,
+        3,
+    },
+
+    Cycles = {
+        Min = 4,
+        Max = 4,
+        WaitTime = 2,
+    },
+
+    CamShake = {
+        true,
+        {1.5, 20, 0.1, 1},
+        100,
+    },
+
+    Jumpscare = {
+        false,
+        {
+            Image1 = "",
+            Image2 = "",
+            Shake = false,
+
+            Sound1 = {
+                10483790459,
+                { Volume = 2000 },
+            },
+
+            Sound2 = {
+                10483837590,
+                { Volume = 2000 },
+            },
+
+            Flashing = {
+                true,
+                Color3.fromRGB(255, 0, 0),
+            },
+
+            Tease = {
+                false,
+                Min = 1,
+                Max = 1,
+            },
+        },
+    },
+
+    CustomDialog = {
+        "Lets see to who you died to",
+        "You died to Nightmare Ambush, Interesting",
+        "This Ambush isnt like any other ambush.",
+        "This Ambush rebounds for 4 times, up to 6 times if you're that lucky.",
+        "Well, ive never heard of a nightmare ambush.",
+        "Off you go with your next run, Good luck!",
+    },
+})
+
+-----[[ Advanced ]]-----
+
+entity.Debug.OnEntitySpawned = function(entityTable)
+    print("[Nightmare Ambush] Spawned:", entityTable.Model)
+end
+
+entity.Debug.OnEntityDespawned = function(entityTable)
+    print("[Nightmare Ambush] Despawned:", entityTable.Model)
+end
+
+entity.Debug.OnEntityStartMoving = function(entityTable)
+    print("[Nightmare Ambush] Started moving")
+end
+
+entity.Debug.OnEntityFinishedRebound = function(entityTable)
+    print("[Nightmare Ambush] Finished rebound")
+end
+
+entity.Debug.OnEntityEnteredRoom = function(entityTable, room)
+    print("[Nightmare Ambush] Entered room:", room)
+end
+
+entity.Debug.OnLookAtEntity = function(entityTable)
+    print("[Nightmare Ambush] Player looked at entity")
+end
+
+entity.Debug.OnDeath = function(entityTable)
+    warn("[Nightmare Ambush] Player died")
+end
+
+------------------------
+
+-- Run entity
+Creator.runEntity(entity)
