@@ -1,0 +1,166 @@
+---====== Load spawner ======---
+
+local spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/no12356/Utilities/refs/heads/main/Doors/Entity%20Spawner/V2/Source.lua"))()
+
+---====== Create entity ======---
+
+local entity = spawner.Create({
+	Entity = {
+		Name = "Smiler",
+		Asset = "https://github.com/no12356/Doors-Hardmode-Remake/raw/main/models/SmilerRemadeByANicePal.rbxm",
+		HeightOffset = 1
+	},
+
+	Lights = {
+		Flicker = {
+			Enabled = true,
+			Duration = 5
+		},
+		Shatter = true,
+		Repair = false
+	},
+
+	CameraShake = {
+		Enabled = true,
+		Range = 100,
+		Values = {20, 20, 1, 2}
+	},
+
+	Movement = {
+		Speed = 850,
+		Delay = 12,
+		Reversed = false
+	},
+
+	Rebounding = {
+		Enabled = true,
+		Type = "Ambush",
+		Min = 5,
+		Max = 5,
+		Delay = 0.3
+	},
+
+	Damage = {
+		Enabled = true,
+		Range = 100,
+		Amount = 125
+	},
+
+	Jumpscare = {
+		true,
+		{
+			Image1 = "rbxassetid://11417375410",
+			Image2 = "rbxassetid://11417375410",
+
+			-- Customize jumpscare size here
+			Size = 0.6,
+
+			Shake = true,
+
+			Sound1 = {
+				5263560566,
+				{
+					Volume = 2.1
+				}
+			},
+
+			Sound2 = {
+				5263560566,
+				{
+					Volume = 2.1
+				}
+			},
+
+			Flashing = {
+				true,
+				Color3.fromRGB(255, 0, 0)
+			},
+
+			Tease = {
+				false,
+				Min = 1,
+				Max = 3
+			}
+		}
+	},
+
+	Crucifixion = {
+		Enabled = true,
+		Range = 100,
+		Resist = false,
+		Break = true
+	},
+
+	Death = {
+		Type = "Guiding",
+		Hints = {
+			"¡¡ THIS SMILE IS LIKE ABMUSH !!",
+			"Hide and don't Smile",
+			"Don't get Tricked"
+		},
+		Cause = "smiler has a big boner"
+	}
+})
+
+---====== Debug entity ======---
+
+entity:SetCallback("OnSpawned", function()
+	print("Smiler has spawned")
+end)
+
+entity:SetCallback("OnStartMoving", function()
+	print("Smiler has started moving")
+end)
+
+entity:SetCallback("OnReachNode", function(node)
+	print("Smiler has reached node:", node)
+end)
+
+entity:SetCallback("OnEnterRoom", function(room, firstTime)
+	if firstTime == true then
+		print("Smiler has entered room: ".. room.Name.. " for the first time")
+	else
+		print("Smiler has entered room: ".. room.Name.. " again")
+	end
+end)
+
+entity:SetCallback("OnLookAt", function(lineOfSight)
+	if lineOfSight == true then
+		print("Player is looking at Smiler")
+	else
+		print("Player view is obstructed from Smiler")
+	end
+end)
+
+entity:SetCallback("OnRebounding", function(startOfRebound)
+	if startOfRebound == true then
+		print("Smiler has started rebounding")
+	else
+		print("Smiler has finished rebounding")
+	end
+end)
+
+entity:SetCallback("OnDespawning", function()
+	print("Smiler is despawning")
+end)
+
+entity:SetCallback("OnDespawned", function()
+	print("Smiler has despawned")
+end)
+
+entity:SetCallback("OnDamagePlayer", function(newHealth)
+	if newHealth == 0 then
+		print("Smiler has killed the player")
+	else
+		print("Smiler has damaged the player")
+	end
+end)
+
+---====== Run entity ======---
+
+entity:Run()
+
+-- entity:Pause()
+-- entity:Resume()
+-- entity:IsPaused()
+-- entity:Despawn()
