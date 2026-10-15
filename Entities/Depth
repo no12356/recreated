@@ -1,1 +1,93 @@
+local Creator = loadstring(game:HttpGet("https://pastebin.com/raw/0fSnvfGt"))()
 
+-- Create entity
+local entity = Creator.createEntity({
+    CustomName = "Depth",
+    Model = "https://github.com/no12356/Doors-Hardmode-Remake/raw/main/models/Depth.rbxm",
+
+    Speed = 350,
+    DelayTime = 5,
+    HeightOffset = 1,
+
+    CanKill = true,
+    KillRange = 100,
+
+    BreakLights = true,
+    BackwardsMovement = false,
+
+    FlickerLights = {
+        true,
+        1,
+    },
+
+    Cycles = {
+        Min = 2,
+        Max = 2,
+        WaitTime = 2,
+    },
+
+    CamShake = {
+        true,
+        {5, 15, 0.1, 1},
+        100,
+    },
+
+    Jumpscare = {
+        true,
+        {
+            Image1 = "https://raw.githubusercontent.com/no12356/Doors-Hardmode-Remake/refs/heads/main/jumpscares/depth.png",
+            Image2 = "https://raw.githubusercontent.com/no12356/Doors-Hardmode-Remake/refs/heads/main/jumpscares/depth.png",
+
+            Shake = true,
+
+            Sound1 = {
+                10483790459,
+                { Volume = 0.5 },
+            },
+
+            Sound2 = {
+                5263560566,
+                { Volume = 0.5 },
+            },
+
+            Flashing = {
+                true,
+                Color3.fromRGB(50, 115, 108),
+            },
+
+            Tease = {
+                false,
+                Min = 1,
+                Max = 5,
+            },
+        },
+    },
+
+    CustomDialog = {
+        "You died to who you call Depth",
+        "Depth is faster than rush and ambush",
+        "And he can rebound 2 Times",
+        "use what you leared from Ambush and rush tho.",
+        "I am Nerfing All Of Entitys",
+        "To not spawn in No Hiding Spots Rooms",
+    },
+})
+
+-- Advanced callbacks
+entity.Debug.OnEntitySpawned = function(entityTable)
+    print("Depth has spawned:", entityTable.Model)
+end
+
+entity.Debug.OnEntityDespawned = function(entityTable)
+    print("Depth has despawned:", entityTable.Model)
+end
+
+entity.Debug.OnEntityStartMoving = function(entityTable)
+    print("Depth has started moving:", entityTable.Model)
+end
+
+entity.Debug.OnEntityFinishedRebound = function(entityTable)
+    print("Depth has finished rebounding:", entityTable.Model)
+end
+
+entity.Debug.OnEntity
