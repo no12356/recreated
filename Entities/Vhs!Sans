@@ -1,0 +1,166 @@
+---====== Load spawner ======---
+
+local spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/no12356/Utilities/refs/heads/main/Doors/Entity%20Spawner/V2/Source.lua"))()
+
+---====== Create entity ======---
+
+local entity = spawner.Create({
+	Entity = {
+		Name = "Vhs!Sans",
+		Asset = "rbxassetid://11508694248",
+		HeightOffset = 0
+	},
+
+	Lights = {
+		Flicker = {
+			Enabled = true,
+			Duration = 1
+		},
+		Shatter = true,
+		Repair = false
+	},
+
+	CameraShake = {
+		Enabled = true,
+		Range = 100,
+		Values = {3.5, 20, 0.1, 1}
+	},
+
+	Movement = {
+		Speed = 21,
+		Delay = 3,
+		Reversed = false
+	},
+
+	Rebounding = {
+		Enabled = true,
+		Type = "Ambush",
+		Min = 1,
+		Max = 1,
+		Delay = 0
+	},
+
+	Damage = {
+		Enabled = true,
+		Range = 120,
+		Amount = 125
+	},
+
+	Jumpscare = {
+		false,
+		{
+			Image1 = "rbxassetid://10483855823",
+			Image2 = "rbxassetid://10483999903",
+
+			Size = 0.6,
+
+			Shake = true,
+
+			Sound1 = {
+				10483790459,
+				{
+					Volume = 0.5
+				}
+			},
+
+			Sound2 = {
+				10483837590,
+				{
+					Volume = 0.5
+				}
+			},
+
+			Flashing = {
+				true,
+				Color3.fromRGB(255, 255, 255)
+			},
+
+			Tease = {
+				true,
+				Min = 1,
+				Max = 1
+			}
+		}
+	},
+
+	Crucifixion = {
+		Enabled = true,
+		Range = 120,
+		Resist = false,
+		Break = true
+	},
+
+	Death = {
+		Type = "Guiding",
+		Hints = {
+			"You died to who you call vhs!sans...",
+			"Try your best to out-run him.",
+			"I really don't have nothing else",
+			"Just try your best to run and Hide when you can."
+		},
+		Cause = ""
+	}
+})
+
+---====== Debug entity ======---
+
+entity:SetCallback("OnSpawned", function()
+	print("Vhs!Sans has spawned")
+end)
+
+entity:SetCallback("OnStartMoving", function()
+	print("Vhs!Sans has started moving")
+end)
+
+entity:SetCallback("OnReachNode", function(node)
+	print("Vhs!Sans has reached node:", node)
+end)
+
+entity:SetCallback("OnEnterRoom", function(room, firstTime)
+	if firstTime == true then
+		print("Vhs!Sans has entered room: ".. room.Name.. " for the first time")
+	else
+		print("Vhs!Sans has entered room: ".. room.Name.. " again")
+	end
+end)
+
+entity:SetCallback("OnLookAt", function(lineOfSight)
+	if lineOfSight == true then
+		print("Player is looking at Vhs!Sans")
+	else
+		print("Player view is obstructed from Vhs!Sans")
+	end
+end)
+
+entity:SetCallback("OnRebounding", function(startOfRebound)
+	if startOfRebound == true then
+		print("Vhs!Sans has started rebounding")
+	else
+		print("Vhs!Sans has finished rebounding")
+	end
+end)
+
+entity:SetCallback("OnDespawning", function()
+	print("Vhs!Sans is despawning")
+end)
+
+entity:SetCallback("OnDespawned", function()
+	print("Vhs!Sans has despawned")
+end)
+
+entity:SetCallback("OnDamagePlayer", function(newHealth)
+	if newHealth == 0 then
+		print("Vhs!Sans has killed the player")
+	else
+		print("Vhs!Sans has damaged the player")
+	end
+end)
+
+---====== Run entity ======---
+
+entity:Run()
+
+-- entity:Pause()
+-- entity:Resume()
+-- entity:IsPaused()
+-- entity:Despawn()
