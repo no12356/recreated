@@ -1,0 +1,107 @@
+
+local Creator = loadstring(game:HttpGet("https://pastebin.com/raw/0fSnvfGt"))()
+
+-- Create entity
+local entity = Creator.createEntity({
+    CustomName = "200",
+    Model = "https://github.com/Isth4t/DoorsModels/blob/main/200Moving.rbxm?raw=true",
+
+    Speed = 700,
+    DelayTime = 10,
+    HeightOffset = 0,
+
+    CanKill = true,
+    KillRange = 20,
+
+    BreakLights = true,
+    BackwardsMovement = true,
+
+    FlickerLights = {
+        true,
+        5,
+    },
+
+    Cycles = {
+        Min = 4,
+        Max = 4,
+        WaitTime = 2,
+    },
+
+    CamShake = {
+        true,
+        {5, 15, 0.1, 1},
+        100,
+    },
+
+    Jumpscare = {
+        true,
+        {
+            Image1 = "rbxassetid://11400868582",
+            Image2 = "rbxassetid://11400871105",
+
+            Shake = true,
+
+            Sound1 = {
+                530591527,
+                { Volume = 0.5 },
+            },
+
+            Sound2 = {
+                530591527,
+                { Volume = 0.5 },
+            },
+
+            Flashing = {
+                true,
+                Color3.fromRGB(255, 255, 255),
+            },
+
+            Tease = {
+                false,
+                Min = 1,
+                Max = 3,
+            },
+        },
+    },
+
+    CustomDialog = {
+        "You died to 200.",
+        "It's very fast.",
+        "Hide when you hear it!",
+    },
+})
+
+-----[[ Advanced ]]-----
+
+entity.Debug.OnEntitySpawned = function(entityTable)
+    print("200 has spawned:", entityTable.Model)
+end
+
+entity.Debug.OnEntityDespawned = function(entityTable)
+    print("200 has despawned:", entityTable.Model)
+end
+
+entity.Debug.OnEntityStartMoving = function(entityTable)
+    print("200 has started moving")
+end
+
+entity.Debug.OnEntityFinishedRebound = function(entityTable)
+    print("200 has finished rebounding")
+end
+
+entity.Debug.OnEntityEnteredRoom = function(entityTable, room)
+    print("200 has entered room:", room)
+end
+
+entity.Debug.OnLookAtEntity = function(entityTable)
+    print("Player is looking at 200")
+end
+
+entity.Debug.OnDeath = function(entityTable)
+    warn("Player has died to 200")
+end
+
+------------------------
+
+-- Run entity
+Creator.runEntity(entity)
