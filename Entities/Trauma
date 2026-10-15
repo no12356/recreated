@@ -1,0 +1,107 @@
+
+local Creator = loadstring(game:HttpGet("https://pastebin.com/raw/0fSnvfGt"))()
+
+-- Create entity
+local entity = Creator.createEntity({
+    CustomName = "Trauma",
+    Model = "https://github.com/no12356/Doors-Hardmode-Remake/raw/main/models/trauma.rbxm",
+
+    Speed = 600,
+    DelayTime = 5,
+    HeightOffset = 1,
+
+    CanKill = true,
+    KillRange = 80,
+
+    BreakLights = true,
+    BackwardsMovement = true,
+
+    FlickerLights = {
+        true,
+        5,
+    },
+
+    Cycles = {
+        Min = 1,
+        Max = 1,
+        WaitTime = 0,
+    },
+
+    CamShake = {
+        true,
+        {5.5, 50, 0.5, 2},
+        100,
+    },
+
+    Jumpscare = {
+        true,
+        {
+            Image1 = "nil",
+            Image2 = "rbxassetid://11278624160",
+
+            Shake = true,
+
+            Sound1 = {
+                10483790459,
+                { Volume = 0 },
+            },
+
+            Sound2 = {
+                10483837590,
+                { Volume = 1000 },
+            },
+
+            Flashing = {
+                true,
+                Color3.fromRGB(255, 255, 255),
+            },
+
+            Tease = {
+                true,
+                Min = 1,
+                Max = 3,
+            },
+        },
+    },
+
+    CustomDialog = {
+        "You died to Trauma...",
+        "Use what you've learned from Rush and Ambush!",
+        "This Mob Randomly Spawns Theres No Patten to it",
+    },
+})
+
+-----[[ Advanced ]]-----
+
+entity.Debug.OnEntitySpawned = function(entityTable)
+    print("Trauma has spawned:", entityTable.Model)
+end
+
+entity.Debug.OnEntityDespawned = function(entityTable)
+    print("Trauma has despawned:", entityTable.Model)
+end
+
+entity.Debug.OnEntityStartMoving = function(entityTable)
+    print("Trauma has started moving:", entityTable.Model)
+end
+
+entity.Debug.OnEntityFinishedRebound = function(entityTable)
+    print("Trauma has finished rebounding:", entityTable.Model)
+end
+
+entity.Debug.OnEntityEnteredRoom = function(entityTable, room)
+    print("Trauma has entered room:", room)
+end
+
+entity.Debug.OnLookAtEntity = function(entityTable)
+    print("Player is looking at Trauma")
+end
+
+entity.Debug.OnDeath = function(entityTable)
+    warn("Player has died to Trauma")
+end
+
+------------------------
+
+-- Run entity
+Creator.runEntity(entity)
