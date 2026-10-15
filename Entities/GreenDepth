@@ -1,10 +1,11 @@
+local Creator = loadstring(game:HttpGet(
+    "https://raw.githubusercontent.com/no12356/recreated/refs/heads/main/Source.lua"
+))()
 
-local Creator = loadstring(game:HttpGet("https://pastebin.com/raw/0fSnvfGt"))()
 
--- Create entity
 local entity = Creator.createEntity({
-    CustomName = "Green Depth",
-    Model = "https://github.com/no12356/Doors-Hardmode-Remake/raw/main/models/Greendeptlololo.rbxm",
+
+    Model = "https://raw.githubusercontent.com/no12356/Doors-Hardmode-Remake/main/models/Greendeptlololo.rbxm",
 
     Speed = 875,
     DelayTime = 17,
@@ -18,19 +19,19 @@ local entity = Creator.createEntity({
 
     FlickerLights = {
         true,
-        15,
+        15
     },
 
     Cycles = {
         Min = 20,
         Max = 20,
-        WaitTime = 0.3,
+        WaitTime = 0.3
     },
 
     CamShake = {
         true,
         {5, 15, 0.1, 1},
-        100,
+        100
     },
 
     Jumpscare = {
@@ -39,75 +40,39 @@ local entity = Creator.createEntity({
             Image1 = "https://raw.githubusercontent.com/no12356/Doors-Hardmode-Remake/main/jumpscares/agreenlookingdepth.png",
             Image2 = "https://raw.githubusercontent.com/no12356/Doors-Hardmode-Remake/main/jumpscares/agreenlookingdepth.png",
 
-            Shake = true,
-
-            Sound1 = {
-                10483790459,
-                { Volume = 4 },
-            },
-
-            Sound2 = {
-                5263560566,
-                { Volume = 4 },
+            Tease = {
+                false,
+                Min = 1,
+                Max = 3
             },
 
             Flashing = {
                 true,
-                Color3.fromRGB(50, 115, 70),
+                Color3.fromRGB(50, 115, 70)
             },
 
-            Tease = {
-                false,
-                Min = 1,
-                Max = 5,
+            Shake = true,
+
+            Sound1 = {
+                10483790459,
+                {Volume = 4}
             },
-        },
+
+            Sound2 = {
+                5263560566,
+                {Volume = 4}
+            }
+        }
     },
 
     CustomDialog = {
-        "Lets see to who you died to",
-        "Ooh, its a green looking depth",
-        "This 'green looking depth' isnt like any other depth!",
-        "He always rebounds for about 20 times",
-        "He spawns in whenever you stall for too long",
-        "So, don't stall for too long!",
-        "Don't underestimate this depth's speed!",
-        "He's a bit faster then smiler.",
-        "Alright, See you on the next run!",
-    },
+        "You died to Green Depth.",
+        "This entity is extremely fast.",
+        "Be prepared for multiple rebounds."
+    }
 })
 
------[[ Advanced ]]-----
 
-entity.Debug.OnEntitySpawned = function(entityTable)
-    print("Green Depth has spawned:", entityTable.Model)
+if entity then
+    Creator.runEntity(entity)
 end
-
-entity.Debug.OnEntityDespawned = function(entityTable)
-    print("Green Depth has despawned:", entityTable.Model)
-end
-
-entity.Debug.OnEntityStartMoving = function(entityTable)
-    print("Green Depth has started moving:", entityTable.Model)
-end
-
-entity.Debug.OnEntityFinishedRebound = function(entityTable)
-    print("Green Depth has finished rebounding:", entityTable.Model)
-end
-
-entity.Debug.OnEntityEnteredRoom = function(entityTable, room)
-    print("Green Depth has entered room:", room)
-end
-
-entity.Debug.OnLookAtEntity = function(entityTable)
-    print("Player is looking at Green Depth")
-end
-
-entity.Debug.OnDeath = function(entityTable)
-    warn("Player has died to Green Depth")
-end
-
-------------------------
-
--- Run entity
-Creator.runEntity(entity)
