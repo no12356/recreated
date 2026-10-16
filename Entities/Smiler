@@ -19,7 +19,7 @@ local entity = Creator.createEntity({
 
     FlickerLights = {
         true,
-        1
+        10
     },
 
     Cycles = {
@@ -37,8 +37,8 @@ local entity = Creator.createEntity({
     Jumpscare = {
         true,
         {
-            Image1 = "YOUR_SMILER_JUMPSCARE_IMAGE_URL",
-            Image2 = "YOUR_SMILER_JUMPSCARE_IMAGE_URL",
+            Image1 = "rbxassetid://11417375410",
+            Image2 = "rbxassetid://11417375410",
 
             Tease = {
                 false,
@@ -55,12 +55,12 @@ local entity = Creator.createEntity({
 
             Sound1 = {
                 10483790459,
-                {Volume = 0.5}
+                {Volume = 2.1}
             },
 
             Sound2 = {
                 5263560566,
-                {Volume = 0.5}
+                {Volume = 2.1}
             }
         }
     },
