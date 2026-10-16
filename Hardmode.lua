@@ -24,7 +24,7 @@ wait(5) require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).c
 -- Depth
 coroutine.wrap(function()
     while true do
-        wait(70)
+        wait(75)
         game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
         wait(0)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/no12356/recreated/main/Entities/Depth"))()
@@ -54,7 +54,7 @@ end)()
 -- NightmareRush
 coroutine.wrap(function()
     while true do
-        wait(230)
+        wait(225)
         game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
         wait(0)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/no12356/recreated/refs/heads/main/Entities/NightmareRush"))()
@@ -64,27 +64,17 @@ end)()
 -- Vhs!Sans
 coroutine.wrap(function()
     while true do
-        wait(180)
+        wait(300)
         game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
         wait(0)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/no12356/recreated/refs/heads/main/Entities/Vhs!Sans"))()
     end
 end)()
 
--- Baller
-coroutine.wrap(function()
-    while true do
-        wait(550)
-        game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
-        wait(0)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/no12356/recreated/refs/heads/main/Entities/Baller"))()
-    end
-end)()
-
 -- NightmareAmbush
 coroutine.wrap(function()
     while true do
-        wait(345)
+        wait(245)
         game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
         wait(0)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/no12356/recreated/main/Entities/NightmareAmbush"))()
@@ -94,7 +84,7 @@ end)()
 -- 200
 coroutine.wrap(function()
     while true do
-        wait(450)
+        wait(200)
         game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
         wait(0)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/no12356/recreated/main/Entities/200"))()
@@ -104,7 +94,7 @@ end)()
 -- GreenDepth
 coroutine.wrap(function()
     while true do
-        wait(2000)
+        wait(5000)
         game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
         wait(0)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/no12356/recreated/main/Entities/GreenDepth"))()
