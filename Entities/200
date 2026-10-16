@@ -66,9 +66,13 @@ local entity = Creator.createEntity({
 
     CustomDialog = {
         "You died to 200.",
-        "It's very fast.",
-        "Hide when you hear it!",
-    },
+        "This is a very fast entity, but slower than smiler",
+        "200 rebounds for up to 4 times and only 4 times",
+        "He flickers the lights for 5 seconds but spawns in 10",
+        "So don't get tricked by 200!",
+        "Alright, ill see you later! Have fun!!",
+        "you wont"
+      },
 })
 
 -----[[ Advanced ]]-----
