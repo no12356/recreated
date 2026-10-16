@@ -66,9 +66,10 @@ local entity = Creator.createEntity({
     },
 
     CustomDialog = {
-        "You died to Depth.",
-        "Depth is faster than Rush and Ambush.",
-        "It can rebound twice."
+        "You died to who you call Depth",
+			"Depth is faster than rush and ambush",
+			"And he can rebound 2 Times",
+			"use what you leared from Ambush and rush tho."
     }
 })
 
