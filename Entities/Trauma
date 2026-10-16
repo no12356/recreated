@@ -67,7 +67,12 @@ local entity = Creator.createEntity({
 
     CustomDialog = {
         "You died to Trauma.",
-        "Pay attention to your surroundings."
+        "This entity is a very fast entity"
+        "It rebounds for only one time"
+        "Get in the closet as soon as the lights flicker!"
+        "You cant outrun him"
+        "Well, ill see you later."
+        "Hope your next run is a better run!"
     }
 })
 
