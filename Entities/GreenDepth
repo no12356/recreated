@@ -67,8 +67,12 @@ local entity = Creator.createEntity({
 
     CustomDialog = {
         "You died to Green Depth.",
-        "This entity is extremely fast.",
-        "Be prepared for multiple rebounds."
+        "This entity only spawns if your run is over 90 minutes long",
+        "This type of depth isnt like any other depth",
+        "He's an entity that rebounds for up to 20 times, 
+        "Hes also faster than smiler!"
+        "Well, dont take too long!"
+        "Have fun on your next run!"
     }
 })
 
